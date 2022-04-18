@@ -2,7 +2,7 @@ import os
 import json
 import requests
 
-output_folder = "AP Macroeconomics"
+output_folder = "OUTPUT_FOLDER"
 try:
     os.mkdir(output_folder)
 except OSError:
@@ -24,7 +24,7 @@ for unit in data:
 
         current_chapter = video[1]
 
-        video_url = requests.get(f'https://fast.wistia.com/embed/medias/{video[0]}.json').json()['media']["assets"][2]['url']
+        video_url = requests.get(f'https://fast.wistia.com/embed/medias/{video[0]}.json').json()['media']["assets"][3]['url']
         video_data = requests.get(video_url)
 
         if current_chapter == last_chapter:
